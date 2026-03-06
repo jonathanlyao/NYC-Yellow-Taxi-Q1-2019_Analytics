@@ -391,9 +391,7 @@ Includes:
 ---
 ## Repository Structure
 
----
 ![repository structure](https://github.com/user-attachments/assets/584211d6-c502-4b82-8bcd-2d9009abbdc3)
----
 
 **Folder description**
 
@@ -403,6 +401,112 @@ Includes:
 - **dbt_project/** – dbt models implementing the layered transformation pipeline
 
 ---
+## How to Reproduce This Project
+
+This section describes how to run the analytics pipeline locally and rebuild the data warehouse and dashboards.
+
+### 1. Install Dependencies
+
+Make sure the following tools are installed:
+
+- Docker
+- PostgreSQL
+- DuckDB
+- dbt
+- Power BI Desktop
+
+---
+
+### 2. Start the PostgreSQL Data Warehouse
+
+Start the local PostgreSQL container:
+
+```bash
+docker compose up -d
+```
+
+This launches the local data warehouse that will store the taxi dataset.
+
+---
+
+### 3. Ingest Taxi Data with DuckDB
+
+Use DuckDB to read Parquet files directly from the NYC Taxi public dataset and load them into PostgreSQL.
+
+Example:
+
+```sql
+INSTALL postgres;
+LOAD postgres;
+
+ATTACH 'dbname=taxi_db user=postgres password=postgres host=localhost'
+AS taxi_db (TYPE POSTGRES);
+
+CREATE TABLE taxi_db.raw.yellow_tripdata_2019_01 AS
+SELECT *
+FROM read_parquet(
+'https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2019-01.parquet'
+);
+```
+
+Repeat the process for:
+
+- February 2019
+- March 2019
+
+Total rows loaded:
+
+```
+22,611,788 taxi trips
+```
+
+---
+
+### 4. Run dbt Transformations
+
+Navigate to the dbt project directory:
+
+```bash
+cd dbt_project
+```
+
+Run the dbt models:
+
+```bash
+dbt run
+```
+
+Optional: run data quality tests
+
+```bash
+dbt test
+```
+
+This step builds the warehouse layers:
+
+```
+raw → staging → core → mart
+```
+
+---
+
+### 5. Open the Power BI Dashboard
+
+Open the Power BI report file:
+
+```
+dashboards/NYC_Taxi_PowerBI.pbix
+```
+
+Connect Power BI to the PostgreSQL database and refresh the model.
+
+The dashboard will load:
+
+- trip-level fact table
+- daily KPI metrics
+- dimension tables
+---
+
 # Future Improvements
 
 Possible extensions for this project:
