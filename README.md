@@ -1,4 +1,4 @@
-# NYC Yellow Taxi Q1 2019 – Operations & Performance Analytics
+# NYC Yellow Taxi Q1 2019 – Operations & Performance Analytics Engineering
 
 This project analyzes the operational performance of NYC Yellow Taxi services during Q1 2019 using a full end-to-end analytics pipeline.
 
