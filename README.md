@@ -391,7 +391,7 @@ Includes:
 ---
 ## Repository Structure
 
-
+---
 NYC-Yellow-Taxi-Q1-2019_Analytics
 │
 ├── README.md # Project overview and documentation
@@ -408,6 +408,14 @@ NYC-Yellow-Taxi-Q1-2019_Analytics
 └── dbt_project # dbt models and transformation logic
 ---
 
+**Folder description**
+
+- **images/** – dashboard preview screenshots used in the README  
+- **ingestion/** – data ingestion scripts (DuckDB → PostgreSQL)  
+- **sql/** – warehouse SQL logic and queries  
+- **dbt_project/** – dbt models implementing the layered transformation pipeline
+
+---
 # Future Improvements
 
 Possible extensions for this project:
