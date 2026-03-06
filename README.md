@@ -392,20 +392,7 @@ Includes:
 ## Repository Structure
 
 ---
-NYC-Yellow-Taxi-Q1-2019_Analytics
-│
-├── README.md # Project overview and documentation
-│
-├── images # Dashboard preview images used in README
-│ ├── dashboard_overview.png
-│ ├── revenue_payment_analysis.png
-│ └── geographic_analysis.png
-│
-├── ingestion # Data ingestion scripts (DuckDB + Parquet → PostgreSQL)
-│
-├── sql # SQL queries and warehouse logic
-│
-└── dbt_project # dbt models and transformation logic
+![repository structure](https://github.com/user-attachments/assets/584211d6-c502-4b82-8bcd-2d9009abbdc3)
 ---
 
 **Folder description**
