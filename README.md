@@ -260,6 +260,8 @@ The Power BI dashboard is organized into seven analytical pages.
 
 ## Page 1 — Executive Overview
 
+![dashboard_overview](https://github.com/user-attachments/assets/6cb88093-2361-4413-a7ef-c47242d777d6)
+
 Purpose:
 
 Provide a 30-second summary of Q1 performance.
@@ -273,6 +275,8 @@ Includes:
 
 
 ## Page 2 — Revenue & Payment Structure
+
+![revenue_payment_analysis](https://github.com/user-attachments/assets/b8ca4c68-dcca-4a6a-9bb1-61b8d6f8d0b7)
 
 Focus:
 
@@ -291,6 +295,8 @@ Revenue per trip must be calculated from the trip-level fact table, not daily ag
 
 
 ## Page 3 — Geographic Analysis
+
+![geographic_analysis](https://github.com/user-attachments/assets/b5abac25-9abf-40fe-908f-b0dc1246cc2c)
 
 Focus:
 
