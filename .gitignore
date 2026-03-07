@@ -1,0 +1,18 @@
+# dbt
+target/
+logs/
+dbt_packages/
+
+# Python
+__pycache__/
+*.pyc
+
+# Power BI
+*.pbix
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Environment files
+.env
