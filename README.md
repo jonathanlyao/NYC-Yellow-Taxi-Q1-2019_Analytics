@@ -419,17 +419,65 @@ Make sure the following tools are installed:
 
 ### 2. Start the PostgreSQL Data Warehouse
 
-Start the local PostgreSQL container:
+Create a local PostgreSQL container to act as the analytics warehouse.
+
+Example `docker-compose.yml`:
+
+```yaml
+version: "3.9"
+
+services:
+  postgres:
+    image: postgres:15
+    container_name: nyc_taxi_postgres
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: taxi_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
+```
+
+Start the container:
 
 ```bash
 docker compose up -d
 ```
 
-This launches the local data warehouse that will store the taxi dataset.
+Verify the container is running:
+
+```bash
+docker ps
+```
 
 ---
 
-### 3. Ingest Taxi Data with DuckDB
+## 3. Create Database Schemas
+
+Connect to PostgreSQL and create the schemas used in the warehouse.
+
+```sql
+CREATE SCHEMA raw;
+CREATE SCHEMA staging;
+CREATE SCHEMA core;
+CREATE SCHEMA mart;
+```
+
+These schemas correspond to the layered warehouse design used in the project:
+
+```
+raw → staging → core → mart
+```
+
+---
+
+### 4. Ingest Taxi Data with DuckDB
 
 Use DuckDB to read Parquet files directly from the NYC Taxi public dataset and load them into PostgreSQL.
 
@@ -462,7 +510,7 @@ Total rows loaded:
 
 ---
 
-### 4. Run dbt Transformations
+### 5. Run dbt Transformations
 
 Navigate to the dbt project directory:
 
@@ -490,7 +538,7 @@ raw → staging → core → mart
 
 ---
 
-### 5. Open the Power BI Dashboard
+### 6. Open the Power BI Dashboard
 
 Open the Power BI report file:
 
