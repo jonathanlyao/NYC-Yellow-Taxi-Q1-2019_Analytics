@@ -21,14 +21,6 @@ with particular attention to:
 - anomaly detection
 - star schema design
 
-The goal of this project is to demonstrate practical skills in:
-
-- Data Engineering
-- Analytics Engineering
-- Data Warehouse Modeling
-- BI Analytics and Business Insight Generation
-
-
 ---
 
 # Project Architecture
