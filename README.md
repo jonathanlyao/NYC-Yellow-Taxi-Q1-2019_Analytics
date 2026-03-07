@@ -20,10 +20,10 @@ with particular attention to:
 - **22.6M taxi trips processed**
 - **DuckDB → PostgreSQL → dbt → Power BI pipeline**
 - **Layered warehouse modeling (raw → staging → core → mart)**
-- **Star schema semantic model**
-- **Operational analytics dashboards with business insights**
 - **data quality issues**
+- **Star schema semantic model**
 - **anomaly detection**
+- **Operational analytics dashboards with business insights**
 
 ---
 
