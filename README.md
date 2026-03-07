@@ -17,9 +17,13 @@ raw data ingestion → warehouse modeling → analytics dashboard
 
 with particular attention to:
 
-- data quality issues
-- anomaly detection
-- star schema design
+- **22.6M taxi trips processed**
+- **DuckDB → PostgreSQL → dbt → Power BI pipeline**
+- **Layered warehouse modeling (raw → staging → core → mart)**
+- **Star schema semantic model**
+- **Operational analytics dashboards with business insights**
+- **data quality issues**
+- **anomaly detection**
 
 ---
 
