@@ -1,5 +1,12 @@
 # NYC Yellow Taxi Q1 2019 – Operations & Performance Analytics Engineering
 
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-15-blue)
+![DuckDB](https://img.shields.io/badge/DuckDB-Analytics%20Engine-yellow)
+![dbt](https://img.shields.io/badge/dbt-Data%20Transformation-orange)
+![Docker](https://img.shields.io/badge/Docker-Containerized-blue)
+![PowerBI](https://img.shields.io/badge/PowerBI-Dashboard-F2C811)
+![Data Engineering](https://img.shields.io/badge/Data%20Engineering-Pipeline-green)
+
 This project analyzes the operational performance of NYC Yellow Taxi services during Q1 2019 using a full end-to-end analytics pipeline.
 
 Instead of a simple notebook-based analysis, the project focuses on building a reproducible analytics warehouse pipeline and a semantic BI model that can support real analytical workloads.
